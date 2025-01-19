@@ -23,17 +23,15 @@ plt.xticks(rotation=45, ha='right')
 
 for p in ax.patches:
     height = p.get_height()
-    if height > 0:  # Only annotate non-zero values
+    if height > 0:  
         width = p.get_width()
         x = p.get_x() + width / 2
         y = p.get_y() + height / 2
         ax.annotate(f'{height:.1f}', (x, y), ha='center', va='center', fontsize=8, color='white')
 
-# Ensure y-axis starts from 0 and use integer values
 plt.ylim(0, 30)
 plt.yticks(range(0, 31, 2))
 
-# Display the plot
 plt.legend(title='', bbox_to_anchor=(1.05, 1), loc='upper left')  
 plt.tight_layout()  
 plt.show()
